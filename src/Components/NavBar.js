@@ -1,15 +1,17 @@
 import styled from "styled-components";
+import { ReactComponent as NameLogo } from "./Logos/NameLogo.svg";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <StyledNavBar>
-      {/* <JohnDotyLogo /> */}
+      <NameLogo />
       <ul>
         <li>
-          <a>About</a>
+          <StyledLink to="/about">About</StyledLink>
         </li>
         <li>
-          <a>Contact</a>
+          <StyledLink to="/contact">Contact</StyledLink>
         </li>
       </ul>
     </StyledNavBar>
@@ -18,4 +20,27 @@ const NavBar = () => {
 
 export default NavBar;
 
-const StyledNavBar = styled.div``;
+const StyledNavBar = styled.div`
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.secondaryText};
+  padding: 0 3rem 0 3rem;
+  display: flex;
+  align-items: center;
+  svg {
+    max-width: 10ch;
+  }
+  ul {
+    margin-left: auto;
+    display: flex;
+
+    li {
+      list-style: none;
+      margin-left: 1rem;
+    }
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${(props) => props.theme.secondaryText};
+`;

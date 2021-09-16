@@ -1,6 +1,6 @@
 import HeroSection from "./HeroSection";
 import TechnologyStack from "./TechnologyStack";
-import Projects from "./Projects";
+import Projects from "./Projects/Projects";
 import CTA from "./CTA";
 
 function Portfolio() {

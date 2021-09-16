@@ -1,19 +1,21 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Portfolio from "./Portfolio/Portfolio";
 import About from "./About";
-import styled, { createGlobalStyle } from "styled-components";
-import styles from "./styles.js";
-import React, { useContext, createContext } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./themes.js";
+import React, { useState } from "react";
 
-const Context = createContext("Default Value");
 const GlobalStyle = createGlobalStyle`
+  html {
+    background-color: ${(props) => props.theme.body}
+  }
     body {
         margin: 0;
         padding: 0;
 
-        & > * {
+        * {
         box-sizing: border-box;
         }
     }
@@ -22,28 +24,33 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
     }
     #content-wrap {
-        padding-bottom: 2.5rem;
+        padding-bottom: 2rem;
     }
 `;
+
 const App = () => {
+  const [dark, setDark] = useState(false);
+
   return (
-    <div id="page-container">
-      <GlobalStyle />
-      <div id="content-wrap">
-        <Router>
-          <NavBar />
-          <Switch>
-            <Route path="/" exact>
-              <Portfolio />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-          </Switch>
-          <Footer />
-        </Router>
+    <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+      <div id="page-container">
+        <GlobalStyle />
+        <div id="content-wrap">
+          <Router>
+            <NavBar setDark={setDark} />
+            <Switch>
+              <Route path="/" exact>
+                <Portfolio />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+            </Switch>
+            <Footer />
+          </Router>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
