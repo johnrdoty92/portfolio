@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
 export const EdgeToEdge = styled.div`
   width: 100%;
   margin-top: 2em;
-  background-color: ${(props) => props.theme.faded || "none"};
+  background: ${(props) => props.theme.faded || "none"};
   padding: 1em;
 `;
 

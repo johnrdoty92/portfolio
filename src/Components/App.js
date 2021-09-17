@@ -9,7 +9,8 @@ import React, { useState } from "react";
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background-color: ${(props) => props.theme.body}
+    background-color: ${(props) => props.theme.body};
+    overflow-x: hidden;
   }
     body {
         margin: 0;
