@@ -8,8 +8,14 @@ import { ReactComponent as HTMLLogo } from "../Logos/TechStack/HTML.svg";
 import { ReactComponent as CSSLogo } from "../Logos/TechStack/CSS.svg";
 import { ReactComponent as PythonLogo } from "../Logos/TechStack/Python.svg";
 import { ReactComponent as GithubLogo } from "../Logos/TechStack/Github(Stack).svg";
+import { useSpring, animated } from "@react-spring/web";
+import { useState } from "react";
 
 const TechnologyStack = () => {
+  const AnimatedLogo = animated(ReactLogo);
+  const [isToggled, setToggled] = useState(false);
+  const bounce = useSpring({ transform: isToggled ? "scale(2)" : "scale(1)" });
+
   return (
     <EdgeToEdge>
       <Heading>Technology Stack</Heading>
@@ -30,10 +36,9 @@ const TechnologyStack = () => {
 export default TechnologyStack;
 
 const TechStackWrapper = styled(Wrapper)`
-flex-flow: row wrap;
-padding: 0 3em;
-svg {
+  flex-flow: row wrap;
+  padding: 0 3em;
+  svg {
     margin-bottom: -2em;
-}
+  }
 `;
-

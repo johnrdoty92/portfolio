@@ -1,7 +1,11 @@
 import styled from "styled-components";
+import {useTransition, animated} from "@react-spring/web"
 import { PrimaryButton, Wrapper } from "../StyledComponents";
+import HeroAnimated from "../Animations/HeroSectionAnimations.js";
 
 const HeroSection = () => {
+const transition = useTransition()
+
   return (
     <HeroSectionWrapper>
       <ValueProposition>Full Stack Web Development Services</ValueProposition>
@@ -9,6 +13,7 @@ const HeroSection = () => {
         <PrimaryButton>PROJECTS</PrimaryButton>
         <PrimaryButton>RESUME</PrimaryButton>
       </ButtonWrapper>
+      <HeroAnimated />
     </HeroSectionWrapper>
   );
 };
@@ -28,6 +33,12 @@ const ButtonWrapper = styled.div`
   width: 30%;
 `;
 
-const HeroSectionWrapper = styled(Wrapper)`
+const HeroSectionWrapper = styled(animated.div)`
   min-height: 225px;
+  position: relative;
+  max-width: 60em;
+  margin: auto;
+  padding: 0 1em;
+  display: flex;
+  justify-content: center;
 `;
