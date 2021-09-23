@@ -1,11 +1,20 @@
 [
     {
-        "title": "React Theme Saver",
-        "description":"This app is made with React and localStorage. Users can pick themes and watch them be updated in real time. They can also save them to localStorage. This app is made with React and localStorage. Users can pick themes and watch them be updated in real time.",
+        "title": "Portfolio",
+        "description":"This website implement react, styled-components, and react-spring. Information on the projects is stored in a MongoDB Atlas instance.",
         "liveLink":"localhost:3000",
         "codeLink":"localhost:3000",
         "tags": [
-            "react", "styled-components", "localStorage", "html", "css", "javascript"
+            "react", "styled-components", "mongoDB", "html", "css", "javascript", "react-router", "react-spring"
+        ]
+    },
+    {
+        "title": "Blog Content Editor",
+        "description":"Using the MERN stack, I created an app that allows the user to write an article with details and store it to a local database. Articles can be styled with a rich-text editor and all HTML tags are preserved when saving to the database.",
+        "liveLink":"localhost:3000",
+        "codeLink":"localhost:3000",
+        "tags": [
+            "react", "styled-components", "mongoDB", "html", "css", "javascript", "react-router"
         ]
     },
     {
@@ -15,6 +24,15 @@
         "codeLink":"localhost:3000",
         "tags": [
             "react", "styled-components", "localStorage", "html", "css", "javascript"
+        ]
+    },
+    {
+        "title": "Zombie Game",
+        "description":"This was created with PyGame, a Python module. It uses the module to implement collision detection and object oriented programming.",
+        "liveLink":"localhost:3000",
+        "codeLink":"localhost:3000",
+        "tags": [
+            "python"
         ]
     }
 ]

@@ -19,8 +19,8 @@ const HeroAnimated = () => {
   const springs = useSprings(
     items.length,
     items.map((item, i) => ({
-      from: { ...item, width: "100%", scaleX: 0, background: "red" },
-      to: { scaleX: 5 * (i / 100), background: "green" },
+      from: { background: "red" },
+      to: { background: "green" },
       top: item.top,
       loop: { reverse: true },
       config: config.molasses,
@@ -40,8 +40,8 @@ export default HeroAnimated;
 
 const AnimatedStyledDiv = styled(animated.div)`
   height: 25px;
-  transform-origin: right;
-  background: grey;
+  width: 25px;
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   z-index: -1000;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);

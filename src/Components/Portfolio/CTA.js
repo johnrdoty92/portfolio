@@ -1,24 +1,16 @@
 import styled from "styled-components";
 import {
-  Wrapper,
   PrimaryButton,
   Heading,
-  EdgeToEdge,
+  PortfolioBlock,
 } from "../StyledComponents";
 const CTA = () => {
   return (
-    <EdgeToEdge>
-      <CTAWrapper>
-        <Heading>Let's Talk</Heading>
-        <PrimaryButton>CONTACT ME</PrimaryButton>
-      </CTAWrapper>
-    </EdgeToEdge>
+    <PortfolioBlock last fadedBG>
+      <Heading>Let's Talk</Heading>
+      <PrimaryButton>CONTACT ME</PrimaryButton>
+    </PortfolioBlock>
   );
 };
 
 export default CTA;
-
-const CTAWrapper = styled(Wrapper)`
-  background-color: ${(props) => props.theme.faded};
-  flex-direction: column;
-`;

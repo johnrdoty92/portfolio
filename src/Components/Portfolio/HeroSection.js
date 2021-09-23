@@ -1,16 +1,25 @@
 import styled from "styled-components";
-import { useTransition, animated } from "@react-spring/web";
-import { PrimaryButton, Wrapper } from "../StyledComponents";
-import HeroAnimated from "../Animations/HeroSectionAnimations.js";
+import { animated } from "@react-spring/web";
+import { PrimaryButton } from "../StyledComponents";
+import HeroAnimated from "../Animations/HeroSectionAnimations(2).js";
 
-const HeroSection = () => {
+const HeroSection = ({ projectsRef }) => {
   return (
     <BackgroundWrapper>
       <HeroAnimated />
       <HeroSectionWrapper>
         <ValueProposition>Full Stack Web Development Services</ValueProposition>
         <ButtonWrapper>
-          <PrimaryButton>PROJECTS</PrimaryButton>
+          <PrimaryButton
+            onClick={() =>
+              projectsRef.current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+              })
+            }
+          >
+            PROJECTS
+          </PrimaryButton>
           <PrimaryButton>RESUME</PrimaryButton>
         </ButtonWrapper>
       </HeroSectionWrapper>
@@ -22,7 +31,6 @@ export default HeroSection;
 
 const ValueProposition = styled.h1`
   display: block;
-  width: 30%;
   text-align: right;
 `;
 const ButtonWrapper = styled.div`
@@ -41,6 +49,7 @@ const HeroSectionWrapper = styled(animated.div)`
   padding: 0 1em;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const BackgroundWrapper = styled.div`

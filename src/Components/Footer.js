@@ -7,26 +7,32 @@ import { ReactComponent as YouTube } from "./Logos/SocialMedia/YouTube.svg";
 const Footer = () => {
   return (
     <StyledFooter>
-      <GitHub />
-      <Linkedin />
-      <YouTube />
+      <a href="#">
+        <GitHub />
+      </a>
+      <a href="#">
+        <Linkedin />
+      </a>
+      <a href="#">
+        <YouTube />
+      </a>
     </StyledFooter>
   );
 };
 
 export default Footer;
 
-const StyledFooter = styled.div`
+const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${(props) => props.theme.primary};
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 2rem;
-
-  svg {
-    height: 1.5rem;
+  margin-top: auto;
+  a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
   }
 `;

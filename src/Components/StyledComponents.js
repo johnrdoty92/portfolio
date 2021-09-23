@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const PrimaryButton = styled.button`
+  display: block;
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.secondaryText};
-  margin: 1rem;
+  margin: 1rem auto;
   padding: 0.5rem;
   border-radius: 3px;
   outline: none;
@@ -11,6 +12,9 @@ export const PrimaryButton = styled.button`
   box-shadow: 0px 4px ${(props) => props.theme.primaryShadow};
   transition: all 0.1s ease;
   align-self: center;
+  &:focus {
+    outline: 3px solid ${(props) => props.theme.callToAction};
+  }
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0px 8px ${(props) => props.theme.primaryShadow};
@@ -22,19 +26,25 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-export const Wrapper = styled.div`
+export const PortfolioBlock = styled.div`
+  width: 100%;
+  background: ${(props) => (props.fadedBG ? props.theme.faded : "none")};
+  padding: 1.5em;
+  margin-bottom: ${(props) => (props.last ? "0" : "1em")};
+`;
+
+export const ClampWrapper = styled.div`
   max-width: 60em;
   margin: auto;
   padding: 0 1em;
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
 `;
 
-export const EdgeToEdge = styled.div`
+export const RelativeWrapper = styled.section`
   width: 100%;
-  margin-top: 2em;
-  background: ${(props) => props.theme.faded || "none"};
-  padding: 1em;
+  position: relative;
 `;
 
 export const Heading = styled.h2`

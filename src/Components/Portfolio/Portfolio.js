@@ -2,15 +2,17 @@ import HeroSection from "./HeroSection";
 import TechnologyStack from "./TechnologyStack";
 import Projects from "./Projects/Projects";
 import CTA from "./CTA";
+import { useRef } from "react";
 
 function Portfolio() {
+  const projectsRef = useRef(null);
   return (
-    <div className="Portfolio">
-      <HeroSection />
+    <>
+      <HeroSection projectsRef={projectsRef}/>
       <TechnologyStack />
-      <Projects />
+      <Projects projectsRef={projectsRef} />
       <CTA />
-    </div>
+    </>
   );
 }
 

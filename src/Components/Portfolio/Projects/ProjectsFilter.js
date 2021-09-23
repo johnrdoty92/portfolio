@@ -1,13 +1,35 @@
 import styled from "styled-components";
-import { Wrapper } from "../../StyledComponents";
+import { ClampWrapper } from "../../StyledComponents";
+import { useState } from "react";
 
-const ProjectsFilter = ({ tags }) => {
+const ProjectsFilter = ({ tags, filterByTag }) => {
+  const [selected, setSelected] = useState("");
   const tagButtons = tags.map((tag, i) => {
-    return <Tag key={tag + i}>{tag}</Tag>;
+    return (
+      <Tag
+        onClick={() => {
+          filterByTag(tag);
+          setSelected(tag);
+        }}
+        key={tag + i}
+        className={selected === tag ? "tag-selected" : ""}
+      >
+        {tag}
+      </Tag>
+    );
   });
   return (
     <ProjectsFilterWrapper>
       <FilterHeader>Filter:</FilterHeader>
+      <Tag
+        onClick={() => {
+          filterByTag("");
+          setSelected("");
+        }}
+        disabled={selected === ""}
+      >
+        Clear Filter
+      </Tag>
       {tagButtons}
     </ProjectsFilterWrapper>
   );
@@ -27,13 +49,24 @@ const Tag = styled.button`
     background-color: ${(props) => props.theme.primaryShadow};
     cursor: pointer;
   }
+  &:active {
+    background-color: ${(props) => props.theme.secondaryText};
+  }
+  &.tag-selected {
+    background-color: ${(props) => props.theme.primaryShadow};
+    box-shadow: 0px 0px 2px 2px ${(props) => props.theme.primary};
+  }
+  &:disabled {
+    background-color: grey;
+  }
 `;
 
-const ProjectsFilterWrapper = styled(Wrapper)`
-  gap: 0.5em;
+const ProjectsFilterWrapper = styled(ClampWrapper)`
+  max-width: 40em;
   align-items: center;
   flex-flow: row wrap;
   margin: 1em auto;
+  gap: 0.5em;
 `;
 
 const FilterHeader = styled.h3`
