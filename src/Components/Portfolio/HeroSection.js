@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { animated } from "@react-spring/web";
-import { PrimaryButton, ButtonLink } from "../StyledComponents";
+import { PrimaryButton } from "../StyledComponents";
 import HeroAnimated from "../Animations/HeroSectionAnimations.js";
 
 const HeroSection = ({ projectsRef }) => {
