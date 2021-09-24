@@ -1,36 +1,52 @@
 import { useSprings, animated, config } from "@react-spring/web";
+import { circle, parallelogram, square } from "./AnimationElements/svgData";
+import { useState } from "react";
 import styled from "styled-components";
 
 const items = [
-  { top: "0%" },
-  { top: "10%" },
-  { top: "20%" },
-  { top: "30%" },
-  { top: "40%" },
-  { top: "50%" },
-  { top: "60%" },
-  { top: "70%" },
-  { top: "80%" },
-  { top: "90%" },
-  { top: "100%" },
+  { left: "4%", bottom: "0%" },
+  { left: "5%", bottom: "18%" },
+  { left: "4%", bottom: "36%" },
+  { left: "6%", bottom: "54%" },
+  { left: "5%", bottom: "72%" },
+  { right: "5%", bottom: "0%" },
+  { right: "4%", bottom: "18%" },
+  { right: "6%", bottom: "36%" },
+  { right: "5%", bottom: "54%" },
+  { right: "4%", bottom: "72%" },
 ];
 
 const HeroAnimated = () => {
+  const [flip, set] = useState(false);
   const springs = useSprings(
     items.length,
     items.map((item, i) => ({
-      from: { ...item, width: "100%", scaleX: 0, background: "red" },
-      to: { scaleX: 5 * (i / 100), background: "green" },
-      top: item.top,
-      loop: { reverse: true },
-      config: config.molasses,
-      delay: 100 * i,
+      from: {
+        scaleX: 1,
+        opacity: 0,
+        bottom: "120%",
+        left: item.left,
+        right: item.right,
+      },
+      to: {
+        opacity: (100.0 - parseFloat(item.bottom)) / 100.0,
+        bottom: item.bottom,
+      },
+      delay: 500 * i,
+      reset: true,
+      reverse: flip,
+      config: { friction: 15, bounce: 1 },
+      onRest: () => {
+        setTimeout(() => {
+          set(!flip);
+        }, 2250);
+      },
     }))
   );
   return (
     <>
-      {springs.map((animation, i) => (
-        <AnimatedStyledDiv key={i} style={animation} />
+      {springs.map((styles, index) => (
+        <AnimatedDiv style={styles} />
       ))}
     </>
   );
@@ -38,11 +54,28 @@ const HeroAnimated = () => {
 
 export default HeroAnimated;
 
-const AnimatedStyledDiv = styled(animated.div)`
-  height: 25px;
-  transform-origin: right;
-  background: grey;
+const AnimatedSVG = styled(animated.svg)`
   position: absolute;
-  z-index: -1000;
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+
+  /* <AnimatedSVG
+          style={{...styles}}
+          viewBox={square.viewBox}
+          width={square.width}
+          height={square.height}
+        >
+          <rect
+            width={square.width}
+            height={square.height}
+            rx={square.rx}
+            fill="#4280DD"
+          />
+        </AnimatedSVG> */
+`;
+
+const AnimatedDiv = styled(animated.div)`
+  position: absolute;
+  width: 12%;
+  height: 50px;
+  background-color: ${(props) => props.theme.primary};
+  border-radius: 5px;
 `;
