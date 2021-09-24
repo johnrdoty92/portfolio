@@ -54,11 +54,11 @@ const App = () => {
               style={{ ...style, width: "100%" }}
             >
               <Switch location={item}>
-                <Route path="/" exact>
-                  <Portfolio />
-                </Route>
                 <Route path="/about">
                   <About />
+                </Route>
+                <Route path="/">
+                  <Portfolio />
                 </Route>
               </Switch>
             </animated.div>
