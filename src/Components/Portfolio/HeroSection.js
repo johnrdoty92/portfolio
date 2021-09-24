@@ -8,7 +8,12 @@ const HeroSection = ({ projectsRef }) => {
     <BackgroundWrapper>
       <HeroAnimated />
       <HeroSectionWrapper>
-        <ValueProposition>Full Stack Web Development Services</ValueProposition>
+        <ValueProposition>
+          Full Stack
+          <br />
+          Web Development
+          <br /> Solutions
+        </ValueProposition>
         <ButtonWrapper>
           <PrimaryButton
             onClick={() =>
@@ -32,6 +37,7 @@ export default HeroSection;
 const ValueProposition = styled.h1`
   display: block;
   text-align: right;
+  font-size: clamp(1rem, 5vw, 2rem);
 `;
 const ButtonWrapper = styled.div`
   display: flex;
@@ -39,6 +45,9 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 30%;
+  button {
+    margin: 0.5em auto 0.5em 1em;
+  }
 `;
 
 const HeroSectionWrapper = styled(animated.div)`
@@ -46,10 +55,12 @@ const HeroSectionWrapper = styled(animated.div)`
   position: relative;
   width: min(90%, 60em);
   margin: auto;
-  padding: 0 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  * {
+    flex: 1 1 0px;
+  }
 `;
 
 const BackgroundWrapper = styled.div`
