@@ -26,6 +26,17 @@ export const PrimaryButton = styled.button`
   }
 `;
 
+export const ButtonLink = styled(PrimaryButton)`
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  flex-basis: 10ch;
+  margin: auto;
+  width: fit-content;
+`;
+
 export const PortfolioBlock = styled.div`
   width: 100%;
   background: ${(props) => (props.fadedBG ? props.theme.faded : "none")};
@@ -51,4 +62,5 @@ export const Heading = styled.h2`
   text-transform: uppercase;
   text-align: center;
   margin: 0;
+  font-size: clamp(1rem, 4.5vw, 1.5rem);
 `;

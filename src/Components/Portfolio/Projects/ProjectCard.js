@@ -1,18 +1,28 @@
 import styled from "styled-components";
 import { PrimaryButton } from "../../StyledComponents";
 
-const ProjectCard = ({ title, description, liveLink, codeLink }) => {
+const ProjectCard = ({ title, description, demo, codeLinks, isLive }) => {
   return (
     <>
       <h4>{title}</h4>
       <p>{description}</p>
       <ButtonWrapper>
-        <ProjectLink as="a" href={liveLink}>
-          Live&nbsp;Site
+        <ProjectLink as="a" href={demo} target="_blank" rel="noreferrer">
+          {isLive ? "Live\xa0Site" : "Demo\xa0Video"}
         </ProjectLink>
-        <ProjectLink as="a" href={codeLink}>
-          Code
-        </ProjectLink>
+        {codeLinks.map((item, i) => {
+          return (
+            <ProjectLink
+              key={i}
+              as="a"
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {item.type}
+            </ProjectLink>
+          );
+        })}
       </ButtonWrapper>
     </>
   );

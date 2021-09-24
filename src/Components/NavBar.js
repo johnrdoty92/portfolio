@@ -22,11 +22,6 @@ const NavBar = () => {
             About
           </StyledLink>
         </li>
-        <li>
-          <StyledLink activeClassName="selected" to="/contact">
-            Contact
-          </StyledLink>
-        </li>
       </ul>
       <HamburgerButton
         onClick={() => setMobileIsOpen(!mobileIsOpen)}
@@ -41,7 +36,7 @@ export default NavBar;
 const StyledNavBar = styled.nav`
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.secondaryText};
-  padding: 0 3rem 0 3rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
@@ -69,37 +64,35 @@ const StyledNavBar = styled.nav`
     position: sticky;
     top: 0px;
     z-index: 900;
+    padding: 0 1rem;
     * {
       transition: all 0.5s ease;
     }
     ul {
       width: 40%;
-      height: 100%;
+      min-height: 100vh;
       padding: 3rem 0;
       margin: 0;
       justify-content: center;
       flex-direction: column;
       gap: 1em;
       z-index: 1000;
-      position: fixed;
+      position: absolute;
       top: 0;
       right: 0;
       transform: translateX(105%);
-      background-color: ${(props) => props.theme.faded};
+      background-color: ${(props) => props.theme.primary};
       box-shadow: -5px 0px 3px rgba(0, 0, 0, 0.2);
       li {
         text-align: center;
         margin: 0 auto 0 1.5rem;
-        a {
-          text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
-        }
       }
     }
     svg.hamburger {
       display: block;
-      position: fixed;
+      position: absolute;
       top: 5px;
-      right: 5%;
+      right: 9%;
       z-index: 1010;
     }
     &.hamburger-open {

@@ -1,14 +1,12 @@
-import styled from "styled-components";
-import {
-  PrimaryButton,
-  Heading,
-  PortfolioBlock,
-} from "../StyledComponents";
+import { ButtonLink, Heading, PortfolioBlock } from "../StyledComponents";
+
 const CTA = () => {
   return (
     <PortfolioBlock last fadedBG>
       <Heading>Let's Talk</Heading>
-      <PrimaryButton>CONTACT ME</PrimaryButton>
+      <ButtonLink as="a" href="mailto:johnrdoty92@gmail.com">
+        CONTACT ME
+      </ButtonLink>
     </PortfolioBlock>
   );
 };

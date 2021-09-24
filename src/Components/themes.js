@@ -1,6 +1,7 @@
 export const lightTheme = {
   body: "white",
   primary: "#4280DD",
+  active: "#B3E3FF",
   primaryShadow: "#003D99",
   primaryText: "black",
   secondaryText: "white",

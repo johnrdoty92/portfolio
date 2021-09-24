@@ -7,13 +7,21 @@ import { ReactComponent as YouTube } from "./Logos/SocialMedia/YouTube.svg";
 const Footer = () => {
   return (
     <StyledFooter>
-      <a href="#">
+      <a href="https://github.com/johnrdoty92" target="_blank" rel="noreferrer">
         <GitHub />
       </a>
-      <a href="#">
+      <a
+        href="https://www.linkedin.com/in/johndoty1992/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <Linkedin />
       </a>
-      <a href="#">
+      <a
+        href="https://www.youtube.com/user/jrdmovimkr"
+        target="_blank"
+        rel="noreferrer"
+      >
         <YouTube />
       </a>
     </StyledFooter>

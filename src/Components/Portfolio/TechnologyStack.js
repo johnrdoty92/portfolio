@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { ClampWrapper, Heading, PortfolioBlock } from "../StyledComponents";
 import { ReactComponent as JavascriptLogo } from "../Logos/TechStack/Javascript.svg";
 import { ReactComponent as ReactLogo } from "../Logos/TechStack/React.svg";

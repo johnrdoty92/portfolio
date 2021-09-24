@@ -1,5 +1,4 @@
-import { useSprings, animated, config } from "@react-spring/web";
-import { circle, parallelogram, square } from "./AnimationElements/svgData";
+import { useSprings, animated } from "@react-spring/web";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -35,7 +34,7 @@ const HeroAnimated = () => {
       delay: 500 * i,
       reset: true,
       reverse: flip,
-      config: { friction: 15, bounce: 1 },
+      config: { tension: 250, friction: 15, bounce: 1.5 },
       onRest: () => {
         setTimeout(() => {
           set(!flip);
@@ -45,32 +44,14 @@ const HeroAnimated = () => {
   );
   return (
     <>
-      {springs.map((styles, index) => (
-        <AnimatedDiv style={styles} />
+      {springs.map((styles, i) => (
+        <AnimatedDiv key={i} style={styles} />
       ))}
     </>
   );
 };
 
 export default HeroAnimated;
-
-const AnimatedSVG = styled(animated.svg)`
-  position: absolute;
-
-  /* <AnimatedSVG
-          style={{...styles}}
-          viewBox={square.viewBox}
-          width={square.width}
-          height={square.height}
-        >
-          <rect
-            width={square.width}
-            height={square.height}
-            rx={square.rx}
-            fill="#4280DD"
-          />
-        </AnimatedSVG> */
-`;
 
 const AnimatedDiv = styled(animated.div)`
   position: absolute;

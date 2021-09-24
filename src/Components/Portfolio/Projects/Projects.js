@@ -19,15 +19,16 @@ const Projects = ({ projectsRef }) => {
 
   //Map fetched data to Card elements
   const projectCards = data.map(
-    ({ title, description, liveLink, codeLink, tags }, i) => {
+    ({ title, description, demo, codeLinks, tags, isLive }, i) => {
       return (
         <ProjectCard
           key={i}
           title={title}
           description={description}
-          liveLink={liveLink}
-          codeLink={codeLink}
+          demo={demo}
+          codeLinks={codeLinks}
           tags={tags}
+          isLive={isLive}
         />
       );
     }
