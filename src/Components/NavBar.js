@@ -100,7 +100,6 @@ const StyledNavBar = styled.nav`
         transform: translateX(0%);
       }
       svg.hamburger {
-        /* transform: translateY(30px); */
         .top {
           transform: rotate(45deg) translate(10px, 0px);
           fill: black;
@@ -120,12 +119,12 @@ const StyledNavBar = styled.nav`
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
-  color: ${(props) => props.theme.primaryShadow};
+  color: ${({ theme }) => theme.primaryShadow};
   transition: all 0.25s ease;
   &:hover {
-    color: ${(props) => props.theme.secondaryText};
+    color: ${({ theme }) => theme.secondaryText};
   }
   &.selected {
-    color: ${(props) => props.theme.secondaryText};
+    color: ${({ theme }) => theme.secondaryText};
   }
 `;

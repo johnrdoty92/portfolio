@@ -1,28 +1,45 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 16px;
+  }
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+  button {
+    font-family: inherit;
+  }
+`;
 
 export const PrimaryButton = styled.button`
   display: block;
-  background-color: ${(props) => props.theme.primary};
-  color: ${(props) => props.theme.secondaryText};
-  margin: 1rem auto;
-  padding: 0.5rem;
+  background-color: ${({ theme }) => theme.button.primary};
+  color: ${({ theme }) => theme.button.text};
+  padding: 0 0.5em;
   border-radius: 3px;
+  box-shadow: 0px 4px ${({ theme }) => theme.button.shadow};
   outline: none;
   border: none;
-  box-shadow: 0px 4px ${(props) => props.theme.primaryShadow};
+  text-decoration: none;
+  text-align: center;
   transition: all 0.1s ease;
-  align-self: center;
+  &:hover,
   &:focus {
-    outline: 3px solid ${(props) => props.theme.callToAction};
-  }
-  &:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 8px ${(props) => props.theme.primaryShadow};
+    box-shadow: 0px 8px ${({ theme }) => theme.button.shadow};
   }
   &:active {
-    background-color: ${(props) => props.theme.faded};
+    background-color: ${({ theme }) => theme.button.active};
     transform: translateY(-2px);
-    box-shadow: 0px 6px ${(props) => props.theme.primaryShadow};
+    box-shadow: 0px 6px ${({ theme }) => theme.button.shadow};
   }
 `;
 
@@ -63,4 +80,16 @@ export const Heading = styled.h2`
   text-align: center;
   margin: 0;
   font-size: clamp(1rem, 4.5vw, 1.5rem);
+`;
+
+export const Container = styled.div`
+  background-color: ${(props) => props.theme.background};
+`;
+
+export const Content = styled.div`
+  max-width: 60em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
