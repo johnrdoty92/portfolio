@@ -5,13 +5,13 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const NavBar = () => {
-  const [mobileIsOpen, setMobileIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
-    <StyledNavBar className={mobileIsOpen ? "hamburger-open" : ""}>
+    <StyledNavBar open={open}>
       <StyledLink to="/">
-        <NameLogo />
+        <NameLogo className={"brand-logo"} />
       </StyledLink>
-      <ul>
+      <LinksList open={open}>
         <li>
           <StyledLink activeClassName="selected" exact to="/">
             Home
@@ -22,10 +22,10 @@ const NavBar = () => {
             About
           </StyledLink>
         </li>
-      </ul>
+      </LinksList>
       <HamburgerButton
-        onClick={() => setMobileIsOpen(!mobileIsOpen)}
-        className="hamburger"
+        className={"hamburger-btn"}
+        onClick={() => setOpen(!open)}
       />
     </StyledNavBar>
   );
@@ -36,95 +36,101 @@ export default NavBar;
 const StyledNavBar = styled.nav`
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.secondaryText};
-  padding: 0 3rem;
+  height: 52px;
+  padding: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-  svg {
-    max-width: 10ch;
+  .brand-logo {
+    width: clamp(1em, 4em + 5vw, 8em);
+    margin-left: 1em;
   }
-  ul {
+  .hamburger-btn {
     margin-left: auto;
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
-    display: flex;
-
-    li {
-      list-style: none;
-      margin-left: 1rem;
+    margin-right: 1.2em;
+    &:hover {
+      cursor: pointer;
     }
-  }
-  svg.hamburger {
-    display: none;
-  }
-  /* ======================= */
-  /* STYLES FOR MOBILE */
-  /* ======================= */
-  @media (max-width: 600px) {
-    position: sticky;
-    top: 0px;
-    z-index: 900;
-    padding: 0 1rem;
-    * {
+    & > * {
       transition: all 0.5s ease;
     }
-    ul {
-      width: 40%;
-      min-height: 100vh;
-      padding: 3rem 0;
-      margin: 0;
-      justify-content: center;
-      flex-direction: column;
-      gap: 1em;
-      z-index: 1000;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translateX(105%);
-      background-color: ${(props) => props.theme.primary};
-      box-shadow: -5px 0px 3px rgba(0, 0, 0, 0.2);
-      li {
-        text-align: center;
-        margin: 0 auto 0 1.5rem;
-      }
+    .top {
+      transform: ${({ open }) =>
+        open ? "rotate(45deg) translateX(10px)" : "none"};
     }
-    svg.hamburger {
-      display: block;
-      position: absolute;
-      top: 5px;
-      right: 9%;
-      z-index: 1010;
+    .middle {
+      opacity: ${({ open }) => (open ? 0 : 1)};
     }
-    &.hamburger-open {
-      ul {
-        transform: translateX(0%);
-      }
-      svg.hamburger {
-        .top {
-          transform: rotate(45deg) translate(10px, 0px);
-          fill: black;
-        }
-        .middle {
-          opacity: 0;
-          fill: black;
-        }
-        .bottom {
-          transform: rotate(-45deg) translate(-25px, -10px);
-          fill: black;
-        }
-      }
+    .bottom {
+      transform: ${({ open }) =>
+        open ? "rotate(-45deg) translate(-25px,-10px)" : "none"};
     }
   }
+  @media screen and (min-width: 576px) {
+    flex-wrap: nowrap;
+    .hamburger-btn {
+      display: none;
+    }
+  } ;
 `;
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.primaryShadow};
   transition: all 0.25s ease;
-  &:hover {
-    color: ${({ theme }) => theme.secondaryText};
+  &:hover,
+  &:focus {
+    color: ${({ theme }) => theme.primaryText};
   }
   &.selected {
-    color: ${({ theme }) => theme.secondaryText};
+    color: ${({ theme }) => theme.primaryText};
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: ${({ theme }) => theme.primaryText};
+    }
+  }
+`;
+
+const LinksList = styled.ul`
+  position: absolute;
+  top: 52px;
+  transform: ${({ open }) => (open ? "scaleY(1)" : "scaleY(0)")};
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  background-color: ${({ theme }) => theme.secondary};
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  order: 3;
+  li {
+    list-style: none;
+    text-align: center;
+    margin-top: 0.5em;
+    &:last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+  @media screen and (min-width: 576px) {
+    position: static;
+    transform: none;
+    transition: none;
+    width: unset;
+    flex-direction: row;
+    background-color: ${({ theme }) => theme.primary};
+    margin: 0 1em 0 auto;
+    order: 2;
+    li {
+      margin-left: 2em;
+    }
   }
 `;

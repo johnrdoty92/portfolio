@@ -25,7 +25,11 @@ const HeroSection = ({ projectsRef }) => {
           >
             PROJECTS
           </PrimaryButton>
-          <PrimaryButton as="a" href="/JohnDotyResume2021.pdf" download>
+          <PrimaryButton
+            as="a"
+            href="%PUBLIC_URL%/JohnDotyResume2021.pdf"
+            download
+          >
             RESUME
           </PrimaryButton>
         </ButtonWrapper>

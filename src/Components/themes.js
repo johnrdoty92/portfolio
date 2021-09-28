@@ -1,14 +1,13 @@
 export const lightTheme = {
-  body: "white",
   background: "white",
   primary: "#4280DD",
+  secondary: "#6E9CE0",
   active: "#B3E3FF",
+  highlight: "#00A3FF",
   primaryShadow: "#003D99",
   primaryText: "white",
   secondaryText: "black",
-  callToAction: "#00A3FF",
   faded: "#FAFAFA",
-  gradient: "",
   button: {
     primary: "#4280DD",
     text: "white",

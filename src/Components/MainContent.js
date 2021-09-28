@@ -1,5 +1,4 @@
 import { useTransition, animated } from "@react-spring/web";
-import { RelativeWrapper } from "./StyledComponents";
 import styled from "styled-components";
 import { Switch, Route, useLocation } from "react-router-dom";
 import About from "./About";
@@ -35,7 +34,7 @@ const MainContent = () => {
 
 export default MainContent;
 
-//This allows for transitioning between routes
+//For transitioning between routes
 const MainWrapper = styled.main`
   position: relative;
 `;

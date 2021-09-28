@@ -38,7 +38,6 @@ const StyledFooter = styled.footer`
   width: 100%;
   margin-top: auto;
   a {
-    height: 100%;
     display: flex;
     align-items: center;
     padding: 0.5em;

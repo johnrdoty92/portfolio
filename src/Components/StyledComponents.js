@@ -17,13 +17,19 @@ export const GlobalStyle = createGlobalStyle`
   button {
     font-family: inherit;
   }
+  p {
+    text-indent: 2em;
+  }
 `;
 
 export const PrimaryButton = styled.button`
   display: block;
+  font-size: ${({ size }) => (size ? size : "initial")};
+  width: ${({ as }) => (as === "a" ? "fit-content" : "initial")};
+  margin: ${({ center }) => (center ? "auto" : "initial")};
   background-color: ${({ theme }) => theme.button.primary};
   color: ${({ theme }) => theme.button.text};
-  padding: 0 0.5em;
+  padding: 0.25em 0.5em;
   border-radius: 3px;
   box-shadow: 0px 4px ${({ theme }) => theme.button.shadow};
   outline: none;
@@ -43,22 +49,14 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-export const ButtonLink = styled(PrimaryButton)`
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  flex-basis: 10ch;
-  margin: auto;
-  width: fit-content;
-`;
-
 export const PortfolioBlock = styled.div`
-  width: 100%;
-  background: ${(props) => (props.fadedBG ? props.theme.faded : "none")};
   padding: 1.5em;
-  margin-bottom: ${(props) => (props.last ? "0" : "1em")};
+  &:last-child {
+    margin-bottom: 1em;
+  }
+  &:nth-child(even) {
+    background: ${({ theme }) => theme.faded};
+  }
 `;
 
 export const ClampWrapper = styled.div`
@@ -68,11 +66,6 @@ export const ClampWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-`;
-
-export const RelativeWrapper = styled.section`
-  width: 100%;
-  position: relative;
 `;
 
 export const Heading = styled.h2`
