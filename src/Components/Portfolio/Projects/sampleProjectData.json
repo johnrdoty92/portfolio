@@ -2,7 +2,7 @@
     {
         "title": "Portfolio",
         "description":"This website implement react, styled-components, and react-spring. Information on the projects is stored in a MongoDB Atlas instance.",
-        "demo":"localhost:3000",
+        "demo":"https://johnrdoty92.github.io/portfolio/",
         "isLive": true,
         "codeLinks":[{"type":"Code","link":"https://github.com/johnrdoty92/portfolio"}],
         "tags": [
@@ -35,7 +35,7 @@
     {
         "title": "Zombie Game",
         "description":"This was created with PyGame, a Python module. It uses the module to implement collision detection and object oriented programming.",
-        "demo":"https://www.youtube.com/playlist?list=PLEqFPUEr9bX805YzIiUx_6uXtB--FQJCb",
+        "demo":"https://youtu.be/w-Z6UE5pMto",
         "isLive": false,
         "codeLinks":[{"type":"Code","link":"https://github.com/johnrdoty92/zombie_game"}],
         "tags": [

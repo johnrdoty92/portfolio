@@ -79,6 +79,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   max-width: 60em;
   margin: ${({ margin }) => (margin ? margin : "auto")};
+  padding: 0 1em;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
