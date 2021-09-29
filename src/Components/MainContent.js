@@ -21,7 +21,7 @@ const MainContent = () => {
               <Route path="/portfolio/about">
                 <About />
               </Route>
-              <Route path="/portfolio">
+              <Route path={["/portfolio", "/"]}>
                 <Portfolio />
               </Route>
             </Switch>
@@ -34,7 +34,7 @@ const MainContent = () => {
 
 export default MainContent;
 
-//For transitioning between routes
+//For animated transitioning between routes
 const MainWrapper = styled.main`
   position: relative;
 `;
