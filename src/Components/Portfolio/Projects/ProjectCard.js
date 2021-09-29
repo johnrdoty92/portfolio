@@ -7,12 +7,12 @@ const ProjectCard = ({ title, description, demo, codeLinks, isLive }) => {
       <h4>{title}</h4>
       <p>{description}</p>
       <ButtonWrapper>
-        <ProjectLink as="a" href={demo} target="_blank" rel="noreferrer">
+        <PrimaryButton as="a" href={demo} target="_blank" rel="noreferrer">
           {isLive ? "Live\xa0Site" : "Demo\xa0Video"}
-        </ProjectLink>
+        </PrimaryButton>
         {codeLinks.map((item, i) => {
           return (
-            <ProjectLink
+            <PrimaryButton
               key={i}
               as="a"
               href={item.link}
@@ -20,7 +20,7 @@ const ProjectCard = ({ title, description, demo, codeLinks, isLive }) => {
               rel="noreferrer"
             >
               {item.type}
-            </ProjectLink>
+            </PrimaryButton>
           );
         })}
       </ButtonWrapper>
@@ -30,19 +30,10 @@ const ProjectCard = ({ title, description, demo, codeLinks, isLive }) => {
 
 export default ProjectCard;
 
-const ProjectLink = styled(PrimaryButton)`
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  flex-basis: 10ch;
-  margin: 0.5em;
-`;
-
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   margin-top: auto;
+  gap: 0.5em;
 `;

@@ -7,6 +7,7 @@ export const lightTheme = {
   primaryShadow: "#003D99",
   primaryText: "white",
   secondaryText: "black",
+  mainText: "black",
   faded: "#FAFAFA",
   button: {
     primary: "#4280DD",
@@ -16,11 +17,20 @@ export const lightTheme = {
   },
 };
 export const darkTheme = {
-  body: "#1f1f1f",
-  primary: "#4280DD",
+  background: "black",
+  primary: "#092753",
+  secondary: "#545454",
+  active: "#B3E3FF",
+  highlight: "#8C8C8C",
+  primaryShadow: "#4478B5",
   primaryText: "black",
-  secondartText: "white",
-  callToAction: "#00A3FF",
-  faded: "#FAFAFA",
-  gradient: "",
+  secondaryText: "white",
+  mainText: "white",
+  faded: "#323232",
+  button: {
+    primary: "#092753",
+    text: "white",
+    shadow: "#4478B5",
+    active: "#EFEFEF",
+  },
 };

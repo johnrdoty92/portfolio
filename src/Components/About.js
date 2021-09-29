@@ -1,9 +1,8 @@
-import { ClampWrapper, Heading } from "./StyledComponents";
-import styled from "styled-components";
+import { Content, Heading } from "./StyledComponents";
 
 const About = () => {
   return (
-    <ClampWrapper>
+    <Content margin="2em auto">
       <Heading>About Me</Heading>
       <p>
         I'm a full stack web developer seeking positions in South Korea. I use
@@ -16,7 +15,7 @@ const About = () => {
         solutions. Secondly, I love how technologies are always changing and
         improving.
       </p>
-    </ClampWrapper>
+    </Content>
   );
 };
 

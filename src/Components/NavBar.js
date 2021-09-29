@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { ReactComponent as NameLogo } from "./Logos/NameLogo.svg";
 import { ReactComponent as HamburgerButton } from "./Logos/HamburgerButton.svg";
+import { ReactComponent as Moon } from "./Logos/Moon.svg";
+import { ReactComponent as Sun } from "./Logos/Sun.svg";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-const NavBar = () => {
+const NavBar = ({ setDark, dark }) => {
   const [open, setOpen] = useState(false);
   return (
     <StyledNavBar open={open}>
@@ -13,14 +15,21 @@ const NavBar = () => {
       </StyledLink>
       <LinksList open={open}>
         <li>
-          <StyledLink activeClassName="selected" exact to="/">
+          <StyledLink activeClassName="selected" exact to="/portfolio">
             Home
           </StyledLink>
         </li>
         <li>
-          <StyledLink activeClassName="selected" to="/about">
+          <StyledLink activeClassName="selected" to="/portfolio/about">
             About
           </StyledLink>
+        </li>
+        <li>
+          {dark ? (
+            <Sun onClick={() => setDark(!dark)} />
+          ) : (
+            <Moon onClick={() => setDark(!dark)} />
+          )}
         </li>
       </LinksList>
       <HamburgerButton
@@ -82,10 +91,10 @@ const StyledLink = styled(NavLink)`
   transition: all 0.25s ease;
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.primaryText};
+    color: white;
   }
   &.selected {
-    color: ${({ theme }) => theme.primaryText};
+    color: white;
     position: relative;
     &::after {
       content: "";
@@ -94,7 +103,7 @@ const StyledLink = styled(NavLink)`
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: ${({ theme }) => theme.primaryText};
+      background-color: white;
     }
   }
 `;

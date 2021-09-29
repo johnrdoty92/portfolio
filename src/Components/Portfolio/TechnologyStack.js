@@ -1,4 +1,5 @@
-import { ClampWrapper, Heading, PortfolioBlock } from "../StyledComponents";
+import { Content, Heading, PortfolioBlock } from "../StyledComponents";
+import styled from "styled-components";
 import { ReactComponent as JavascriptLogo } from "../Logos/TechStack/Javascript.svg";
 import { ReactComponent as ReactLogo } from "../Logos/TechStack/React.svg";
 import { ReactComponent as NodejsLogo } from "../Logos/TechStack/Node.js.svg";
@@ -12,7 +13,7 @@ const TechnologyStack = () => {
   return (
     <PortfolioBlock fadedBG>
       <Heading>Technology Stack</Heading>
-      <ClampWrapper>
+      <TechStackIcons>
         <ReactLogo />
         <NodejsLogo />
         <MongoDBLogo />
@@ -21,9 +22,15 @@ const TechnologyStack = () => {
         <CSSLogo />
         <PythonLogo />
         <GithubLogo />
-      </ClampWrapper>
+      </TechStackIcons>
     </PortfolioBlock>
   );
 };
 
 export default TechnologyStack;
+
+const TechStackIcons = styled(Content)`
+  align-items: center;
+  gap: 1.5em;
+  margin: 1em auto;
+`;

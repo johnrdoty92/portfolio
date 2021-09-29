@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ClampWrapper } from "../../StyledComponents";
+import { Content } from "../../StyledComponents";
 import { useState } from "react";
 
 const ProjectsFilter = ({ tags, filterByTag }) => {
@@ -61,14 +61,13 @@ const Tag = styled.button`
   }
 `;
 
-const ProjectsFilterWrapper = styled(ClampWrapper)`
+const ProjectsFilterWrapper = styled(Content)`
   max-width: 40em;
   align-items: center;
-  flex-flow: row wrap;
   margin: 1em auto;
   gap: 0.5em;
 `;
 
-const FilterHeader = styled.h3`
+const FilterHeader = styled.h4`
   margin: 0;
 `;

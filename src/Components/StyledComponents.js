@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%; 
     margin: 0;
     padding: 0;
+    background: ${({ theme }) => theme.background}
   }
   html {
     overflow-x: hidden;
@@ -14,11 +15,17 @@ export const GlobalStyle = createGlobalStyle`
   *, *::after, *::before {
     box-sizing: border-box;
   }
+  h1, h2, h3, h4, p {
+    color: ${({ theme }) => theme.mainText};
+  }
   button {
     font-family: inherit;
   }
   p {
     text-indent: 2em;
+  }
+  svg > .letter {
+    fill: ${({ theme }) => theme.mainText}
   }
 `;
 
@@ -27,15 +34,17 @@ export const PrimaryButton = styled.button`
   font-size: ${({ size }) => (size ? size : "initial")};
   width: ${({ as }) => (as === "a" ? "fit-content" : "initial")};
   margin: ${({ center }) => (center ? "auto" : "initial")};
-  background-color: ${({ theme }) => theme.button.primary};
-  color: ${({ theme }) => theme.button.text};
   padding: 0.25em 0.5em;
+  border: none;
   border-radius: 3px;
   box-shadow: 0px 4px ${({ theme }) => theme.button.shadow};
   outline: none;
-  border: none;
+  background-color: ${({ theme }) => theme.button.primary};
+  color: ${({ theme }) => theme.button.text};
+  text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
   transition: all 0.1s ease;
   &:hover,
   &:focus {
@@ -51,21 +60,9 @@ export const PrimaryButton = styled.button`
 
 export const PortfolioBlock = styled.div`
   padding: 1.5em;
-  &:last-child {
-    margin-bottom: 1em;
-  }
   &:nth-child(even) {
     background: ${({ theme }) => theme.faded};
   }
-`;
-
-export const ClampWrapper = styled.div`
-  max-width: 60em;
-  margin: auto;
-  padding: 0 1em;
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
 `;
 
 export const Heading = styled.h2`
@@ -81,8 +78,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   max-width: 60em;
-  margin: auto;
+  margin: ${({ margin }) => (margin ? margin : "auto")};
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-flow: row wrap;
 `;

@@ -1,4 +1,4 @@
-import { Heading, ClampWrapper, PortfolioBlock } from "../../StyledComponents";
+import { Heading, Content, PortfolioBlock } from "../../StyledComponents";
 import ProjectCard from "./ProjectCard";
 import ProjectsFilter from "./ProjectsFilter";
 import styled from "styled-components";
@@ -69,7 +69,7 @@ const Projects = ({ projectsRef }) => {
 
 export default Projects;
 
-const ProjectCardsWrapper = styled(ClampWrapper)`
+const ProjectCardsWrapper = styled(Content)`
   gap: 1em;
   position: relative;
 `;
@@ -84,8 +84,5 @@ const AnimatedCard = styled(animated.div)`
   box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.2);
   h4 {
     text-align: center;
-  }
-  p {
-    text-indent: 1.5em;
   }
 `;

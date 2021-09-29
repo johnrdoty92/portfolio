@@ -16,6 +16,7 @@ const HeroSection = ({ projectsRef }) => {
         </ValueProposition>
         <ButtonWrapper>
           <PrimaryButton
+            size="clamp(.8rem, 4.5vw, 1.5rem)"
             onClick={() =>
               projectsRef.current.scrollIntoView({
                 block: "start",
@@ -26,6 +27,7 @@ const HeroSection = ({ projectsRef }) => {
             PROJECTS
           </PrimaryButton>
           <PrimaryButton
+            size="clamp(.8rem, 4.5vw, 1.5rem)"
             as="a"
             href="JohnDotyResume2021.pdf"
             download
@@ -50,32 +52,18 @@ const ButtonWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 30%;
-  * {
-    margin: 0.5em auto 0.5em 1em;
-    text-decoration: none;
-    font-size: 14px;
-    height: 40px;
-    padding: 0.5em;
-    font-weight: normal;
-  }
+  gap: 1em;
+  margin-left: 0.5em;
 `;
 
 const HeroSectionWrapper = styled(animated.div)`
   min-height: 225px;
   position: relative;
-  width: min(90%, 60em);
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  * {
-    flex: 1 1 0px;
-  }
 `;
 
 const BackgroundWrapper = styled.div`
-  width: 100%;
   position: relative;
-  overflow: hidden;
 `;

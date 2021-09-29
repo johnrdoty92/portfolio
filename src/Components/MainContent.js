@@ -18,10 +18,10 @@ const MainContent = () => {
         return (
           <animated.section style={style}>
             <Switch location={item}>
-              <Route path="/about">
+              <Route path="/portfolio/about">
                 <About />
               </Route>
-              <Route path="/">
+              <Route path="/portfolio">
                 <Portfolio />
               </Route>
             </Switch>

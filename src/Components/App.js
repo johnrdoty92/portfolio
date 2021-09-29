@@ -14,7 +14,7 @@ const App = () => {
   return (
     <ThemeProvider theme={dark ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <NavBar setDark={setDark} />
+      <NavBar setDark={setDark} dark={dark} />
       <MainContent />
       <Footer />
     </ThemeProvider>
