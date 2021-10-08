@@ -3,6 +3,7 @@
         "title": "Portfolio",
         "description":"This website implement react, styled-components, and react-spring. Information on the projects is stored in a MongoDB Atlas instance.",
         "demo":"https://johnrdoty92.github.io/portfolio/",
+        "thumbnail": 1,
         "isLive": true,
         "codeLinks":[{"type":"Code","link":"https://github.com/johnrdoty92/portfolio"}],
         "tags": [
@@ -14,6 +15,7 @@
         "description":"Using the MERN stack, I created an app that allows the user to write an article with details and store it to a local database. Articles can be styled with a rich-text editor and all HTML tags are preserved when saving to the database.",
         "isLive": true,
         "demo":"http://johndoty.website",
+        "thumbnail": 0,
         "codeLinks":[
             {"type":"React\u00a0Code","link":"https://github.com/johnrdoty92/blog-editor-frontend"},
             {"type":"Node\u00a0Code","link":"https://github.com/johnrdoty92/blog-editor-backend"}
@@ -26,6 +28,7 @@
         "title": "React Theme Saver",
         "description":"This app is made with React and localStorage. Users can pick themes and watch them be updated in real time. They can also save them to localStorage. This app is made with React and localStorage. Users can pick themes and watch them be updated in real time.",
         "demo":"https://johnrdoty92.github.io/react-theme-saver/",
+        "thumbnail": 3,
         "isLive": true,
         "codeLinks":[{"type":"Code","link":"https://github.com/johnrdoty92/react-theme-saver"}],
         "tags": [
@@ -36,6 +39,7 @@
         "title": "Zombie Game",
         "description":"This was created with PyGame, a Python module. It uses the module to implement collision detection and object oriented programming.",
         "demo":"https://youtu.be/w-Z6UE5pMto",
+        "thumbnail": 4,
         "isLive": false,
         "codeLinks":[{"type":"Code","link":"https://github.com/johnrdoty92/zombie_game"}],
         "tags": [
@@ -45,6 +49,7 @@
     {
         "title": "Python Tutorials",
         "description":"After finishing the Zombie Game project, I filmed a series of tutorials that explained the coding process in detail. They are availble to watch on Youtube.",
+        "thumbnail": 2,
         "isLive": false,
         "codeLinks":[{"type":"Video Playlist","link":"https://youtube.com/playlist?list=PLEqFPUEr9bX805YzIiUx_6uXtB--FQJCb"}],
         "tags": [

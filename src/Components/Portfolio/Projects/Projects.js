@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useTransition, animated } from "@react-spring/web";
 //Sample JSON data for testing
 import data from "./sampleProjectData.json";
+import thumbnails from "../../../Thumbnails/thumbnailImporter";
 
 const Projects = ({ projectsRef }) => {
   //Get all unique tags
@@ -19,11 +20,12 @@ const Projects = ({ projectsRef }) => {
 
   //Map fetched data to Card elements
   const projectCards = data.map(
-    ({ title, description, demo, codeLinks, tags, isLive }, i) => {
+    ({ title, description, demo, thumbnail, codeLinks, tags, isLive }, i) => {
       return (
         <ProjectCard
           key={i}
           title={title}
+          thumbnail={thumbnails[thumbnail]}
           description={description}
           demo={demo}
           codeLinks={codeLinks}
@@ -82,7 +84,8 @@ const AnimatedCard = styled(animated.div)`
   display: flex;
   flex-flow: column;
   box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.2);
-  h4 {
+  h2 {
     text-align: center;
+    font-weight: 400;
   }
 `;

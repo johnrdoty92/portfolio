@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import { PrimaryButton } from "../../StyledComponents";
 
-const ProjectCard = ({ title, description, demo, codeLinks, isLive }) => {
+const ProjectCard = ({
+  title,
+  description,
+  demo,
+  codeLinks,
+  isLive,
+  thumbnail,
+}) => {
   return (
     <>
-      <h4>{title}</h4>
+      <h2>{title}</h2>
+      <StyledThumnail src={thumbnail} alt={"image"} />
       <p>{description}</p>
       <ButtonWrapper>
         {demo ? (
@@ -38,4 +46,15 @@ const ButtonWrapper = styled.div`
   flex-flow: row wrap;
   margin-top: auto;
   gap: 0.5em;
+`;
+
+const StyledThumnail = styled.div`
+  height: 300px;
+  background-image: linear-gradient(
+      transparent 95%,
+      ${({ theme }) => theme.faded}
+    ),
+    url(${({ src }) => src});
+  background-size: cover;
+  background-position: top;
 `;
