@@ -63,9 +63,9 @@ const Tag = styled.button`
 `;
 
 const ProjectsFilterWrapper = styled(Content)`
-  max-width: 40em;
+  max-width: 30em;
   align-items: center;
-  margin: 1em auto;
+  margin: 2em auto 3em auto;
   gap: 0.5em;
 `;
 

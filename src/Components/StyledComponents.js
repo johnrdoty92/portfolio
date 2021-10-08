@@ -59,7 +59,7 @@ export const PrimaryButton = styled.button`
 `;
 
 export const PortfolioBlock = styled.div`
-  padding: 1.5em;
+  padding: 3em 0.5em ${(props) => (props.pb ? props.pb : "3em")} 0.5em;
   &:nth-child(even) {
     background: ${({ theme }) => theme.faded};
   }

@@ -70,7 +70,7 @@ const Projects = ({ projectsRef }) => {
 export default Projects;
 
 const ProjectCardsWrapper = styled(Content)`
-  gap: 1em;
+  gap: 2em;
   position: relative;
 `;
 

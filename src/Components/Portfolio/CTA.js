@@ -2,7 +2,7 @@ import { PrimaryButton, Heading, PortfolioBlock } from "../StyledComponents";
 
 const CTA = () => {
   return (
-    <PortfolioBlock>
+    <PortfolioBlock pb="4em">
       <Heading>Let's Talk</Heading>
       <PrimaryButton
         size="1.5em"

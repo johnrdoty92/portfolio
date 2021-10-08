@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { animated } from "@react-spring/web";
 import { PrimaryButton } from "../StyledComponents";
 // import HeroAnimated from "../Animations/HeroSectionAnimations.js";
-// import HeroAnimated from "../Animations/HeroSectionAnimationsFlow.js";
+import HeroAnimated from "../Animations/HeroSectionAnimationsFlow.js";
 
 const HeroSection = ({ projectsRef }) => {
   return (
     <BackgroundWrapper>
-      {/* <HeroAnimated /> */}
+      <HeroAnimated />
       <HeroSectionWrapper>
         <ValueProposition>
           Full Stack
@@ -47,6 +47,11 @@ const ValueProposition = styled.h1`
   display: block;
   text-align: right;
   font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: 200;
+  &:first-line {
+    font-weight: 700;
+    color: ${({ theme }) => theme.primaryShadow};
+  }
 `;
 const ButtonWrapper = styled.div`
   display: flex;
@@ -58,7 +63,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const HeroSectionWrapper = styled(animated.div)`
-  min-height: 225px;
+  min-height: 350px;
   position: relative;
   display: flex;
   justify-content: center;
