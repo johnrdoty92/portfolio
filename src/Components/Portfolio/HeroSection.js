@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { animated } from "@react-spring/web";
 import { PrimaryButton } from "../StyledComponents";
-import HeroAnimated from "../Animations/HeroSectionAnimations.js";
+// import HeroAnimated from "../Animations/HeroSectionAnimations.js";
+// import HeroAnimated from "../Animations/HeroSectionAnimationsFlow.js";
 
 const HeroSection = ({ projectsRef }) => {
   return (
     <BackgroundWrapper>
-      <HeroAnimated />
+      {/* <HeroAnimated /> */}
       <HeroSectionWrapper>
         <ValueProposition>
           Full Stack
@@ -62,6 +63,7 @@ const HeroSectionWrapper = styled(animated.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1em;
 `;
 
 const BackgroundWrapper = styled.div`

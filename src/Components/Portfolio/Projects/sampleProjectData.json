@@ -41,5 +41,14 @@
         "tags": [
             "python"
         ]
+    },
+    {
+        "title": "Python Tutorials",
+        "description":"After finishing the Zombie Game project, I filmed a series of tutorials that explained the coding process in detail. They are availble to watch on Youtube.",
+        "isLive": false,
+        "codeLinks":[{"type":"Video Playlist","link":"https://youtube.com/playlist?list=PLEqFPUEr9bX805YzIiUx_6uXtB--FQJCb"}],
+        "tags": [
+            "python"
+        ]
     }
 ]

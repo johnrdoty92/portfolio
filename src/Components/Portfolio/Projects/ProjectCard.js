@@ -7,9 +7,11 @@ const ProjectCard = ({ title, description, demo, codeLinks, isLive }) => {
       <h4>{title}</h4>
       <p>{description}</p>
       <ButtonWrapper>
-        <PrimaryButton as="a" href={demo} target="_blank" rel="noreferrer">
-          {isLive ? "Live\xa0Site" : "Demo\xa0Video"}
-        </PrimaryButton>
+        {demo ? (
+          <PrimaryButton as="a" href={demo} target="_blank" rel="noreferrer">
+            {isLive ? "Live\xa0Site" : "Demo\xa0Video"}
+          </PrimaryButton>
+        ) : null}
         {codeLinks.map((item, i) => {
           return (
             <PrimaryButton

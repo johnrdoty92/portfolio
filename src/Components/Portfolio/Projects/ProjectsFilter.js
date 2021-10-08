@@ -38,11 +38,12 @@ const ProjectsFilter = ({ tags, filterByTag }) => {
 export default ProjectsFilter;
 
 const Tag = styled.button`
+  font-size: 0.65rem;
   outline: none;
   border: none;
   border-radius: 3px;
   padding: 0.5em;
-  color: ${(props) => props.theme.secondaryText};
+  color: ${(props) => props.theme.button.text};
   background-color: ${(props) => props.theme.primary};
   transition: background-color 0.25s ease;
   &:hover {
