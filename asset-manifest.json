@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.54828bb6.chunk.css",
-    "main.js": "/portfolio/static/js/main.ec0f4d32.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.ec0f4d32.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.fe7d55a0.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.fe7d55a0.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.9d1ff42e.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.9d1ff42e.js.map",
     "static/js/2.c1997b23.chunk.js": "/portfolio/static/js/2.c1997b23.chunk.js",
@@ -10,6 +10,7 @@
     "index.html": "/portfolio/index.html",
     "static/css/main.54828bb6.chunk.css.map": "/portfolio/static/css/main.54828bb6.chunk.css.map",
     "static/js/2.c1997b23.chunk.js.LICENSE.txt": "/portfolio/static/js/2.c1997b23.chunk.js.LICENSE.txt",
+    "static/media/BlogEditor.2a7b43b6.PNG": "/portfolio/static/media/BlogEditor.2a7b43b6.PNG",
     "static/media/CSS.742758fe.svg": "/portfolio/static/media/CSS.742758fe.svg",
     "static/media/GitHub.db4ee63d.svg": "/portfolio/static/media/GitHub.db4ee63d.svg",
     "static/media/Github(Stack).34f6c529.svg": "/portfolio/static/media/Github(Stack).34f6c529.svg",
@@ -21,15 +22,19 @@
     "static/media/Moon.ef748d39.svg": "/portfolio/static/media/Moon.ef748d39.svg",
     "static/media/NameLogo.1481133e.svg": "/portfolio/static/media/NameLogo.1481133e.svg",
     "static/media/Node.js.be854a23.svg": "/portfolio/static/media/Node.js.be854a23.svg",
+    "static/media/Portfolio.247b256f.PNG": "/portfolio/static/media/Portfolio.247b256f.PNG",
     "static/media/Python.7abafa3a.svg": "/portfolio/static/media/Python.7abafa3a.svg",
+    "static/media/PythonTutorial.2d9e8b2d.PNG": "/portfolio/static/media/PythonTutorial.2d9e8b2d.PNG",
     "static/media/React.5120326a.svg": "/portfolio/static/media/React.5120326a.svg",
     "static/media/Sun.5a5a09cd.svg": "/portfolio/static/media/Sun.5a5a09cd.svg",
-    "static/media/YouTube.a07dd5ce.svg": "/portfolio/static/media/YouTube.a07dd5ce.svg"
+    "static/media/ThemeSaver.574b6a25.PNG": "/portfolio/static/media/ThemeSaver.574b6a25.PNG",
+    "static/media/YouTube.a07dd5ce.svg": "/portfolio/static/media/YouTube.a07dd5ce.svg",
+    "static/media/ZombieGame.d772f234.PNG": "/portfolio/static/media/ZombieGame.d772f234.PNG"
   },
   "entrypoints": [
     "static/js/runtime-main.9d1ff42e.js",
     "static/js/2.c1997b23.chunk.js",
     "static/css/main.54828bb6.chunk.css",
-    "static/js/main.ec0f4d32.chunk.js"
+    "static/js/main.fe7d55a0.chunk.js"
   ]
 }
