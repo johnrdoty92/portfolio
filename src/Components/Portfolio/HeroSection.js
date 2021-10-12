@@ -73,4 +73,5 @@ const HeroSectionWrapper = styled(animated.div)`
 
 const BackgroundWrapper = styled.div`
   position: relative;
+  overflow-x: hidden;
 `;
