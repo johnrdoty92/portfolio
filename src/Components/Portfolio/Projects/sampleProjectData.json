@@ -1,18 +1,18 @@
 [
     {
         "title": "Portfolio",
-        "description":"This website implement react, styled-components, and react-spring. Information on the projects is stored in a MongoDB Atlas instance.",
+        "description":"This website implements react, styled-components, and react-spring. Currently, information on the projects is stored in a local JSON file, but I plan on creating an application that will store the data on a MongoDB Atlas instance and allow for basic CRUD operations.",
         "demo":"https://johnrdoty92.github.io/portfolio/",
         "thumbnail": 1,
         "isLive": true,
         "codeLinks":[{"type":"Code","link":"https://github.com/johnrdoty92/portfolio"}],
         "tags": [
-            "react", "styled-components", "mongoDB", "html", "css", "javascript", "react-router", "react-spring"
+            "react", "styled-components", "html", "css", "javascript", "react-router", "react-spring"
         ]
     },
     {
         "title": "Blog Content Editor",
-        "description":"Using the MERN stack, I created an app that allows the user to write an article with details and store it to a local database. Articles can be styled with a rich-text editor and all HTML tags are preserved when saving to the database.",
+        "description":"Using the MERN stack, I created an app that allows the user to write an article with details and store it to a local database. Articles can be styled with a rich-text editor and all HTML tags are preserved when saving to the database. The code is being served on a CentOS system with Vultr using nginx as the server.",
         "isLive": true,
         "demo":"http://johndoty.website",
         "thumbnail": 0,
@@ -26,7 +26,7 @@
     },
     {
         "title": "React Theme Saver",
-        "description":"This app is made with React and localStorage. Users can pick themes and watch them be updated in real time. They can also save them to localStorage. This app is made with React and localStorage. Users can pick themes and watch them be updated in real time.",
+        "description":"This app is made with React and localStorage. Users can pick color themes and watch as they update in real time. The app allows the user to choose from either a single tone scheme or a complimentary color scheme where an appropriate secondary color is calculated based on the initial selection. They can also save these themes to or delete them from localStorage.",
         "demo":"https://johnrdoty92.github.io/react-theme-saver/",
         "thumbnail": 3,
         "isLive": true,
@@ -37,7 +37,7 @@
     },
     {
         "title": "Zombie Game",
-        "description":"This was created with PyGame, a Python module. It uses the module to implement collision detection and object oriented programming.",
+        "description":"This was created with PyGame, a Python module. It uses the module to implement collision detection and object oriented programming. The purpose of this game was to practice concepts in Object Oriented Programming.",
         "demo":"https://youtu.be/w-Z6UE5pMto",
         "thumbnail": 4,
         "isLive": false,
