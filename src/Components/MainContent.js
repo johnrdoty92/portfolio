@@ -4,7 +4,7 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import About from "./About";
 import Portfolio from "./Portfolio/Portfolio";
 
-const MainContent = () => {
+const MainContent = ({setShowModal}) => {
   const location = useLocation();
   const transition = useTransition(location, {
     from: { opacity: 0, translateX: "-100%", position: "absolute" },
@@ -22,7 +22,7 @@ const MainContent = () => {
                 <About />
               </Route>
               <Route path={["/portfolio", "/"]}>
-                <Portfolio />
+                <Portfolio setShowModal={setShowModal}/>
               </Route>
             </Switch>
           </animated.section>

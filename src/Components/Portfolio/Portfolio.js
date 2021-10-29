@@ -4,14 +4,14 @@ import Projects from "./Projects/Projects";
 import CTA from "./CTA";
 import { useRef } from "react";
 
-function Portfolio() {
+function Portfolio({setShowModal}) {
   const projectsRef = useRef(null);
   return (
     <>
-      <HeroSection projectsRef={projectsRef}/>
+      <HeroSection projectsRef={projectsRef} />
       <TechnologyStack />
       <Projects projectsRef={projectsRef} />
-      <CTA />
+      <CTA setShowModal={setShowModal}/>
     </>
   );
 }
