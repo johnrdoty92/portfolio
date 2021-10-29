@@ -1,7 +1,7 @@
 [
     {
-        "title": "Portfolio",
-        "description":"This website implements react, styled-components, and react-spring. Currently, information on the projects is stored in a local JSON file, but I plan on creating an application that will store the data on a MongoDB Atlas instance and allow for basic CRUD operations.",
+        "title": {"en":"Portfolio", "ko":"포트폴리오"},
+        "description":{"en":"This website implements react, styled-components, and react-spring. Currently, information on the projects is stored in a local JSON file, but I plan on creating an application that will store the data on a MongoDB Atlas instance and allow for basic CRUD operations.", "ko":"이사이"},
         "demo":"https://johnrdoty92.github.io/portfolio/",
         "thumbnail": 1,
         "isLive": true,
@@ -48,7 +48,7 @@
     },
     {
         "title": "Python Tutorials",
-        "description":"After finishing the Zombie Game project, I filmed a series of tutorials that explained the coding process in detail. They are availble to watch on Youtube.",
+        "description":"After finishing the Zombie Game project, I filmed a series of tutorials that explained the coding process in detail. They are available to watch on Youtube.",
         "thumbnail": 2,
         "isLive": false,
         "codeLinks":[{"type":"Video Playlist","link":"https://youtube.com/playlist?list=PLEqFPUEr9bX805YzIiUx_6uXtB--FQJCb"}],
